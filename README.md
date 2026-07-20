@@ -1,10 +1,8 @@
-# Brain-Tumor-Segmentation-using-BraTS-MRI-
-Developed an end-to-end brain tumor segmentation pipeline using the BraTS MRI dataset. Built preprocessing, training, evaluation, and ONNX-based inference pipelines for U-Net segmentation of WT, TC, and ET regions. Gradio and AWS deployment are in progress.
+# Brain Tumor Segmentation using BraTS MRI
 
+Developed an end-to-end brain tumor segmentation pipeline using the BraTS MRI dataset. Built preprocessing, training, evaluation, and ONNX-based inference pipelines for U-Net segmentation of Whole Tumor (WT), Tumor Core (TC), and Enhancing Tumor (ET). Gradio and AWS deployment are currently in progress.
 
-# Brain-Tumor-Segmentation-using-BraTS-MRI-
-Developed an end-to-end brain tumor segmentation pipeline using the BraTS MRI dataset. Built preprocessing, training, evaluation, and ONNX-based inference pipelines for U-Net segmentation of WT, TC, and ET regions. Gradio and AWS deployment are in progress.
-
+---
 
 ## Overview
 
@@ -20,58 +18,70 @@ The model segments three clinically important regions:
 
 Deployment using Gradio and AWS is currently in progress.
 
+---
 
 ## Features
 
-- End-to-end segmentation pipeline
+- End-to-end brain tumor segmentation pipeline
 - Multi-modal MRI preprocessing
 - Slice-wise training pipeline
 - Data augmentation using Albumentations
 - U-Net semantic segmentation model
 - Dice Score and HD95 evaluation
 - ONNX Runtime inference
-- Modular inference pipeline
-- FastAPI Inference API (In Progress)
-- Interactive Gradio application (In Progress)
-- AWS Deployment (In Progress)
+- Modular preprocessing and post-processing pipeline
+- FastAPI inference API *(In Progress)*
+- Interactive Gradio application *(In Progress)*
+- AWS deployment *(In Progress)*
 
+---
 
 ## Dataset
 
-Dataset: BraTS (Brain Tumor Segmentation Challenge)
+**Dataset:** BraTS (Brain Tumor Segmentation Challenge)
 
-Files: *.nii.gz
+**Input Format:** `.nii.gz`
 
-Input modalities:
+### MRI Modalities
 
 - T1
 - T1ce
 - T2
 - FLAIR
 
-Output classes:
+### Output Classes
 
 - Whole Tumor (WT)
 - Tumor Core (TC)
 - Enhancing Tumor (ET)
 
+---
 
 ## Project Structure
-project/
 
+```text
+project/
+│
 ├── dataset/
-│   └── Data_Analysis.ipynb
-│   └── Data_Preparation.ipynb
+│   ├── Data_Analysis.ipynb
+│   ├── Data_Preparation.ipynb
 │   └── split.json
+│
 ├── code/
-│   └── train.py
-│   └── Config.yaml
+│   ├── train.py
+│   └── config.yaml
+│
 ├── inference/
 │   └── api/
+│
 ├── evaluate/
+│
 ├── output/
+│
 └── README.md
+```
 
+---
 
 ## MRI Preprocessing
 
@@ -82,57 +92,66 @@ project/
 - Mask preparation
 - Data augmentation
 
+---
+
 ## Model
 
-Architecture:
+**Architecture**
 
 - U-Net
 
-Loss Function:
+**Loss Function**
 
 - BCE + Dice Loss
 
-Framework:
+**Framework**
 
 - PyTorch Lightning
 
+---
 
 ## Evaluation Metrics
 
 - Dice Score
 - HD95
 
-Results:
-| Region | Dice  |
-| ------ | ----- |
-| WT     | 0.918 |
-| TC     | 0.876 |
-| ET     | 0.821 |
+### Results
 
+| Region | Dice Score |
+|---------|-----------:|
+| WT | **0.918** |
+| TC | **0.876** |
+| ET | **0.821** |
 
-## ONNX Runtime
+---
+
+## ONNX Runtime Optimization
 
 The trained PyTorch model was exported to ONNX for deployment-ready inference.
 
-Implemented:
+### Implemented
 
-- ONNX export
+- ONNX model export
 - ONNX Runtime inference
 - GPU inference support
-- Modular preprocessing and post-processing pipeline
+- Modular preprocessing pipeline
+- Modular post-processing pipeline
+
+---
 
 ## Deployment
 
 Deployment is currently under development.
 
-Planned features:
+### Planned Features
 
-- Upload MRI (.npz)
-- Automatic segmentation
-- Overlay visualization
-- Gradio Web UI
-- AWS Deployment
+- Upload MRI (`.npz`)
+- Automatic tumor segmentation
+- Segmentation overlay visualization
+- Interactive Gradio web application
+- AWS deployment
 
+---
 
 ## Tech Stack
 
@@ -143,9 +162,10 @@ Planned features:
 - Albumentations
 - ONNX Runtime
 - MedPy
-- Gradio
-- AWS (In Progress)
+- Gradio *(In Progress)*
+- AWS *(In Progress)*
 
+---
 
 ## Future Improvements
 
@@ -153,6 +173,17 @@ Planned features:
 - MONAI integration
 - TensorRT optimization
 - Docker deployment
-- SageMaker endpoint
-- Intgration of MRI (.nii.gz) / DICOM Medical Imaging File
+- AWS SageMaker endpoint
+- Support for MRI `.nii.gz` and DICOM files
 - Batch inference
+
+---
+
+## Acknowledgements
+
+- BraTS (Brain Tumor Segmentation Challenge)
+- PyTorch
+- PyTorch Lightning
+- ONNX Runtime
+- Albumentations
+- MedPy

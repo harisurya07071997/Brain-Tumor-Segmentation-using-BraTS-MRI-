@@ -1,0 +1,8 @@
+model:
+  
+   path: "model_0.9153.onnx"
+   height": 256
+   width": 256
+   num_classes: 3,
+   batch_size: 16
+

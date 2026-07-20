@@ -1,0 +1,13 @@
+# Machine learning weights and checkpoints
+*.ckpt
+*.onnx
+
+# Data formats
+*.nii.gz
+*.npz
+
+# compressed files
+*.tar
+
+# Jupyter Notebook checkpoints folder
+.ipynb_checkpoints/
